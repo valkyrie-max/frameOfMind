@@ -5,7 +5,7 @@ const LandingPage = () => {
         <div className="wrapper">
             <div className="landingPageContainer">
                 <div className="landingPageMainText">
-                    <p className="landingPageAestheticElement">はじめまして</p>
+                    <p className="landingPageAestheticElement ">はじめまして!</p>
                     <h1 className="landingPageHeading">welcome to the</h1>
                     <div className="logoContainer">
                         <img src={require('../assets/projectLogo.png')} alt=""/>
@@ -19,7 +19,7 @@ const LandingPage = () => {
                             <button className="landingPageAbout" type="button">about</button>
                         </li>
                         <li>
-                            <button className="landingPageGo" type="button">やろう</button>
+                            <button aria-label="let's do it!" className="landingPageGo" type="button">やろう!</button>
                         </li>
                         <li>
                             <button className="landingPageLetters" type="button">letters</button>
