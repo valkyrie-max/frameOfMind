@@ -1,0 +1,42 @@
+.landingPageContainer {
+    padding: 80px 0px;
+    text-align: center;
+}
+
+.landingPageAestheticElement {
+    color: $darkHighlightColor;
+    font-size: 3.5rem;
+}
+
+.landingPageHeading {
+    font-size: 6.5rem;
+    margin-top: 150px;
+    color: $darkHighlightColor;
+}
+
+.logoContainer {
+    display: inline-block;
+    max-width: 75%;
+}
+
+.landingPageDescription {
+    font-size: 3.8rem;
+    color: $darkHighlightColor;
+}
+
+.landingPageNavButtons ul {
+    display: flex;
+    justify-content: center;
+    li {
+        list-style: none;
+        .landingPageAbout {
+            background-color: rgba($lightHighlightColor, 0.5);
+        }
+        .landingPageGo {
+            background-color: rgba($darkHighlightColor, 0.5);
+        }
+        .landingPageLetters {
+            background-color: rgba($primaryTextColor, 0.5);
+        }
+    }
+}

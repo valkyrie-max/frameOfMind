@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import './App.scss';
+
+// import components
+import LandingPage from './Components/LandingPage';
+
+// styling import
+import './styles/sass/style.css';
 
 class App extends Component {
+  // constructor goes here
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>frame of MIND</h1>
+      <header className="appHeader">
+        <LandingPage />
         </header>
-      </div>
     );
   }
 }
