@@ -8,9 +8,10 @@ html {
     margin: 0 auto;
 }
 
-h1, p, a, button {
+h1, h4, p, a, button {
     font-family: $primaryFont;
     font-weight: 300;
+    letter-spacing: 1.2px;
     margin: 0;
     padding: 0;
 }
@@ -28,7 +29,20 @@ ul {
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 header {
+    background-color: $backgroundColor;
+    min-height: 100vh;
+}
+
+main {
     background-color: $backgroundColor;
     min-height: 100vh;
 }
@@ -43,4 +57,12 @@ button {
     margin: 0;
     padding: 0;
     border: none;
+}
+
+.fatText {
+    font-weight: 500;
+}
+
+.crossedOut {
+    text-decoration: line-through;
 }

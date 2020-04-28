@@ -10,7 +10,7 @@ const LandingPage = () => {
                     <div className="logoContainer">
                         <img src={require('../assets/projectLogo.png')} alt=""/>
                     </div>
-                    <h3 className="landingPageDescription">a place where you can let it all out.</h3>
+                    <h2 className="landingPageDescription">a place where you can let it all out.</h2>
                 </div>
 
                 <div className="landingPageNavButtons">
