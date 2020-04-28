@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import firebase from './firebase';
+
+
 
 // import components
 import LandingPage from './Components/LandingPage';
 import Description from './Components/Description';
-import firebase from './firebase';
+import Emotion from './Components/Emotion';
 
 // styling import
 import './styles/sass/style.css';
@@ -11,17 +14,13 @@ import './styles/sass/style.css';
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      userChoice: '',
+      showForm: true,
+      showEmotion: true
+    }
   }
 
-  componentDidMount(){
-      // setting up the firebase listener 
-      const dbRef = firebase.database().ref();
-      dbRef.on('value', (response) => {
-        // here we use Firebase's .val() method to parse our database info the way we want it
-        console.log(response.val());
-      });
-  }
-  
   // generating buttons by using map method to DRY the code
   generateButtons = () => {
     const buttonArray = [
@@ -37,30 +36,46 @@ class App extends Component {
     })
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  // handle submits
+  handleOptionSubmit = (event) => {
+    event.preventDefault(); 
+  }
+  handleEmotionSubmit = (event) => {
+    event.preventDefault(); 
   }
   
 
   // hide form on submit
-  state = {
-    showForm: true
-  }
   toggleForm = () => {
     this.setState({
       showForm: !this.state.showForm
     })
   }
 
-  handleUserClick = (event) => {
-    const userValue = event.target.value;
-    console.log(userValue)
-    this.toggleForm();
+  // show emotion field
+  toggleEmotion = () => {
+    this.setState({
+      showEmotion: !this.state.showEmotion
+    })
+    console.log(`working`)
   }
 
+  handleUserClick = (event) => {
+    const userValue = event.target.value;
+    this.setState({
+      userChoice: userValue
+    })
+    console.log(userValue)
+    this.toggleForm();
+    this.toggleEmotion();
+  }
 
   render() {
-    const formVisibility = this.state.showForm ? '' : 'sr-only'
+    // toggling classes
+    const formVisibility = this.state.showForm ? '' : 'srOnly'
+    const emotionVisibility = this.state.showEmotion ? 'srOnly' : ''
+    const emotionClass = `${this.state.userChoice} ${emotionVisibility}`
+
     return (
       <>
         <header className="appHeader">
@@ -68,11 +83,22 @@ class App extends Component {
         </header>
         <main>
           <Description />
-          <section className="selectionMenu">
-                <form className={formVisibility} onSubmit={this.handleSubmit} action="" id="userSelectionMenu">
-                  <label htmlFor="">make a choice</label>
-                  {this.generateButtons()}
+            <section className="selectionMenu">
+              <div className="wrapper">
+                <form className={formVisibility} onSubmit={this.handleOptionSubmit} action="" id="userSelectionMenu">
+                  <label htmlFor="userSelectionMenu">make a choice</label>
+                  <div className="buttons">
+                    {this.generateButtons()}
+                  </div>
                 </form>
+              </div>
+            </section>
+            <section className={emotionClass}>
+              <div className="wrapper">
+                  <form className="emotionForm" onSubmit={this.handleEmotionSubmit} action="" name="userLetterForm" method="">
+                    <Emotion name={this.state.userChoice}/>
+                  </form>
+              </div>
             </section>
         </main>
       </>

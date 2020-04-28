@@ -221,7 +221,7 @@ html {
           box-sizing: inherit;
 }
 
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -302,6 +302,11 @@ button {
 
 .crossedOut {
   text-decoration: line-through;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
 }
 
 .landingPageContainer {
