@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Description extends Component {
     render() {
         return(
-            <div className="wrapper">
-                <section className="descriptionContainer">
+            <section className="descriptionContainer">
+                <div className="wrapper">
                     <div className="topText">
                         <div className="sectionName">
                             <h2>how does it work?</h2>
@@ -34,8 +34,8 @@ class Description extends Component {
                             <p><span className="fatText">signing</span> your name with your name or a nickname is also an option. <span className="crossedOut">but you don't have to.</span></p>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         )
     }
 }

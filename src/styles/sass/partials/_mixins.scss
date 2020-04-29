@@ -1,0 +1,11 @@
+@mixin japaneseAfter {
+    left: 50%;
+    bottom: 20%;
+    font-size: 3.7rem;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+@mixin optionHover {
+    flex: 1 0 10%;
+}

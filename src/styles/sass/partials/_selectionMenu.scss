@@ -1,4 +1,89 @@
-form button {
-    margin: 50px;
-    font-size: 4rem;
+.selectionMenu form {
+    min-height: 100vh;
+    padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabel {
+    display: inline-block;
+    width: 100%;
+    font-size: 10rem;
+    text-align: right;
+    color: $primaryTextColor;
+}
+
+.buttons {
+    flex: 1;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    button {
+        flex: 1 0 0;
+        display: inline-block;
+        background-color: $lightHighlightColor;
+        color: $primaryTextColor;
+        font-size: 3.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: all 0.8s ease;
+        position: relative;
+    }
+}
+
+.anger::after {
+    @include japaneseAfter;
+    content: '怒り';
+}
+.joy::after{
+    @include japaneseAfter;
+    content: '幸せ';
+}
+
+.sadness::after{
+    @include japaneseAfter;
+    content: '悲哀';
+}
+
+.tranquil::after{
+    @include japaneseAfter;
+    content: '平穏';
+}
+
+.empty::after{
+    @include japaneseAfter;
+    content: '虚ろ';
+}
+
+.anger:hover {
+    @include optionHover;
+    color: #7F000E;
+    background-color: #0C0C0C;
+}
+
+.joy:hover {
+    @include optionHover;
+    color: #6CD0B6;
+    background-color: #D64B55;
+}
+
+.sadness:hover {
+    @include optionHover;
+    color: #5A4C52;
+    background-color: #CAC5D5;
+}
+
+.tranquil:hover {
+    @include optionHover;
+    color: #8CB898;
+    background-color: #F1F3DA;
+}
+
+.empty:hover {
+    @include optionHover;
+    color: #C6C6C6;
+    background-color: #F0F0F0;
 }

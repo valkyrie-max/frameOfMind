@@ -32,7 +32,7 @@ class App extends Component {
     ]
 
     return buttonArray.map((value) => {
-      return <button onClick={this.handleUserClick} type="submit" value={value}>{value}</button>
+      return <button onClick={this.handleUserClick} type="submit" className={value} value={value}>{value}</button>
     })
   }
 
@@ -59,7 +59,7 @@ class App extends Component {
     })
     console.log(`working`)
   }
-  
+
   handleUserClick = (event) => {
     const userValue = event.target.value;
     this.setState({
@@ -72,7 +72,9 @@ class App extends Component {
 
   render() {
     // toggling classes
+    // form classes
     const formVisibility = this.state.showForm ? '' : 'srOnly'
+    // emotion classes
     const emotionVisibility = this.state.showEmotion ? 'srOnly' : ''
     const emotionClass = `${this.state.userChoice} ${emotionVisibility}`
 
@@ -86,7 +88,7 @@ class App extends Component {
             <section className="selectionMenu">
               <div className="wrapper">
                 <form className={formVisibility} onSubmit={this.handleOptionSubmit} action="" id="userSelectionMenu">
-                  <label htmlFor="userSelectionMenu">make a choice</label>
+                  <label className="formLabel" htmlFor="userSelectionMenu">make a choice</label>
                   <div className="buttons">
                     {this.generateButtons()}
                   </div>
