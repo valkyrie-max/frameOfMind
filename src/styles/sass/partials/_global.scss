@@ -67,7 +67,15 @@ button {
     text-decoration: line-through;
 }
 
-textarea {
+textarea, input[type='text'] {
     resize: none;
     width: 100%;
+    font-size: 1.7rem;
+    font-family: $primaryFont;
+    line-height: 2;
+}
+
+::placeholder {
+    font-size: 1.5rem;
+    font-family: $primaryFont;
 }

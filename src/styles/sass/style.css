@@ -297,9 +297,32 @@ button {
   text-decoration: line-through;
 }
 
-textarea {
+textarea, input[type='text'] {
   resize: none;
   width: 100%;
+  font-size: 1.7rem;
+  font-family: "Raleway", sans-serif;
+  line-height: 2;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+}
+
+:-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+}
+
+::-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+}
+
+::placeholder {
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
 }
 
 .landingPageContainer {
@@ -545,7 +568,7 @@ textarea {
   position: relative;
 }
 
-.anger::after {
+.menuFormContainer .anger::after {
   left: 50%;
   bottom: 20%;
   font-size: 3.7rem;
@@ -555,7 +578,7 @@ textarea {
   content: '怒り';
 }
 
-.joy::after {
+.menuFormContainer .joy::after {
   left: 50%;
   bottom: 20%;
   font-size: 3.7rem;
@@ -565,7 +588,7 @@ textarea {
   content: '幸せ';
 }
 
-.sadness::after {
+.menuFormContainer .sadness::after {
   left: 50%;
   bottom: 20%;
   font-size: 3.7rem;
@@ -575,7 +598,7 @@ textarea {
   content: '悲哀';
 }
 
-.tranquil::after {
+.menuFormContainer .tranquil::after {
   left: 50%;
   bottom: 20%;
   font-size: 3.7rem;
@@ -585,7 +608,7 @@ textarea {
   content: '平穏';
 }
 
-.empty::after {
+.menuFormContainer .empty::after {
   left: 50%;
   bottom: 20%;
   font-size: 3.7rem;
@@ -595,43 +618,123 @@ textarea {
   content: '虚ろ';
 }
 
-.anger:hover {
+.menuFormContainer .anger:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10%;
           flex: 1 0 10%;
-  color: #7F000E;
-  background-color: #0C0C0C;
+  color: #0C0C0C;
+  background-color: #7F000E;
 }
 
-.joy:hover {
+.menuFormContainer .joy:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10%;
           flex: 1 0 10%;
-  color: #6CD0B6;
-  background-color: #D64B55;
+  color: #ff0054;
+  background-color: #ffbd00;
 }
 
-.sadness:hover {
+.menuFormContainer .sadness:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10%;
           flex: 1 0 10%;
   color: #CAC5D5;
-  background-color: #6d6875;
+  background-color: #9c89b8;
 }
 
-.tranquil:hover {
+.menuFormContainer .tranquil:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10%;
           flex: 1 0 10%;
-  color: #8CB898;
-  background-color: #F1F3DA;
+  color: #F1F3DA;
+  background-color: #8CB898;
 }
 
-.empty:hover {
+.menuFormContainer .empty:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 10%;
           flex: 1 0 10%;
-  color: #C6C6C6;
-  background-color: #F0F0F0;
+  color: #F0F0F0;
+  background-color: #8C939C;
+}
+
+.emotionContainer {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.emotionForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.emotionInputLabel {
+  font-size: 10rem;
+}
+
+.nameHere, .characterLimit {
+  font-size: 3rem;
+  padding: 10px 0px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+.emotionForm {
+  margin-top: 30px;
+}
+
+.submitLetter {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px 0px;
+  margin-top: 25px;
+}
+
+audio {
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.backToSelection {
+  width: 30%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2.2rem;
+  padding: 10px 0px;
+  margin-top: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.angerMain {
+  background-color: #7F000E;
+  color: #0C0C0C;
+}
+
+.joyMain {
+  background-color: #ffbd00;
+  color: #ff0054;
+}
+
+.sadnessMain {
+  background-color: #9c89b8;
+  color: #CAC5D5;
+}
+
+.tranquilMain {
+  background-color: #8CB898;
+  color: #F1F3DA;
+}
+
+.emptyMain {
+  background-color: #8C939C;
+  color: #F0F0F0;
 }
 /*# sourceMappingURL=style.css.map */

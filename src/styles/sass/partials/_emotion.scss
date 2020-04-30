@@ -1,0 +1,73 @@
+.emotionContainer {
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.emotionForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.emotionInputLabel {
+    font-size: 10rem;
+}
+
+.nameHere, .characterLimit {
+    font-size: 3rem;
+    padding: 10px 0px;
+    font-family: $primaryFont;
+    font-weight: 500;
+}
+
+.emotionForm {
+    margin-top: 30px;
+}
+
+.submitLetter {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 0px;
+    margin-top: 25px;
+}
+
+audio {
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.backToSelection {
+    width: 30%;
+    align-self: center;
+    font-size: 2.2rem;
+    padding: 10px 0px;
+    margin-top: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+// SPECIFIC EMOTIONS STYLING
+.angerMain {
+    background-color: $backgroundColorAnger;
+    color: $textColorAnger;
+}
+
+.joyMain {
+    background-color: $backgroundColorJoy;
+    color: $textColorJoy;
+}
+
+.sadnessMain {
+    background-color: $backgroundColorSadness;
+    color: $textColorSadness;
+}
+
+.tranquilMain {
+    background-color: $backgroundColorTranquil;
+    color: $textColorTranquil;
+}
+
+.emptyMain {
+    background-color: $backgroundColorEmpty;
+    color: $textColorEmpty;
+}

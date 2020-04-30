@@ -1,10 +1,27 @@
-// colors 
+// fonts
+$primaryFont: 'Raleway', sans-serif;
+$secondaryFont: 'Merriweather', serif;
+
+// main colors 
 $backgroundColor: #EBEAEA; 
 $primaryTextColor: #474350;
 $lightHighlightColor: #B9CDDA; 
 $darkHighlightColor: #979EB1; 
 
-// fonts
+// emotion color
+    // anger
+$textColorAnger: #0C0C0C;
+$backgroundColorAnger: #7F000E;
+    // joy
+$textColorJoy: #ff0054;
+$backgroundColorJoy: #ffbd00;
+    // sadness
+$textColorSadness: #CAC5D5;
+$backgroundColorSadness: #9c89b8;
+    // tranquil
+$textColorTranquil: #F1F3DA;
+$backgroundColorTranquil: #8CB898;
+    // empty
+$textColorEmpty: #F0F0F0;
+$backgroundColorEmpty: #8C939C;
 
-$primaryFont: 'Raleway', sans-serif;
-$secondaryFont: 'Merriweather', serif;

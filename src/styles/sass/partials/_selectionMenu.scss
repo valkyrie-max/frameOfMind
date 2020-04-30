@@ -34,56 +34,58 @@
     }
 }
 
-.anger::after {
-    @include japaneseAfter;
-    content: '怒り';
-}
-.joy::after{
-    @include japaneseAfter;
-    content: '幸せ';
-}
-
-.sadness::after{
-    @include japaneseAfter;
-    content: '悲哀';
-}
-
-.tranquil::after{
-    @include japaneseAfter;
-    content: '平穏';
-}
-
-.empty::after{
-    @include japaneseAfter;
-    content: '虚ろ';
-}
-
-.anger:hover {
-    @include optionHover;
-    color: #7F000E;
-    background-color: #0C0C0C;
-}
-
-.joy:hover {
-    @include optionHover;
-    color: #6CD0B6;
-    background-color: #D64B55;
-}
-
-.sadness:hover {
-    @include optionHover;
-    color: #CAC5D5;
-    background-color: #6d6875;
-}
-
-.tranquil:hover {
-    @include optionHover;
-    color: #8CB898;
-    background-color: #F1F3DA;
-}
-
-.empty:hover {
-    @include optionHover;
-    color: #C6C6C6;
-    background-color: #F0F0F0;
+.menuFormContainer {
+    .anger::after {
+        @include japaneseAfter;
+        content: '怒り';
+    }
+    .joy::after{
+        @include japaneseAfter;
+        content: '幸せ';
+    }
+    
+    .sadness::after{
+        @include japaneseAfter;
+        content: '悲哀';
+    }
+    
+    .tranquil::after{
+        @include japaneseAfter;
+        content: '平穏';
+    }
+    
+    .empty::after{
+        @include japaneseAfter;
+        content: '虚ろ';
+    }
+    
+    .anger:hover {
+        @include optionHover;
+        color: $textColorAnger;
+        background-color: $backgroundColorAnger;
+    }
+    
+    .joy:hover {
+        @include optionHover;
+        color: $textColorJoy;
+        background-color: $backgroundColorJoy;
+    }
+    
+    .sadness:hover {
+        @include optionHover;
+        color: $textColorSadness;
+        background-color: $backgroundColorSadness;
+    }
+    
+    .tranquil:hover {
+        @include optionHover;
+        color: $textColorTranquil;
+        background-color: $backgroundColorTranquil;
+    }
+    
+    .empty:hover {
+        @include optionHover;
+        color: $textColorEmpty;
+        background-color: $backgroundColorEmpty;
+    }
 }
