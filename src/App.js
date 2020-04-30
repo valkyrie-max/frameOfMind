@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
 
-
-
 // import components
 import LandingPage from './Components/LandingPage';
 import Description from './Components/Description';
 import Emotion from './Components/Emotion';
+import MusicPlayer from './Components/MusicPlayer'
 
 // styling import
 import './styles/sass/style.css';
@@ -44,7 +43,6 @@ class App extends Component {
     event.preventDefault(); 
   }
   
-
   // hide form on submit
   toggleForm = () => {
     this.setState({
@@ -57,17 +55,17 @@ class App extends Component {
     this.setState({
       showEmotion: !this.state.showEmotion
     })
-    console.log(`working`)
   }
 
+  // handle user click
   handleUserClick = (event) => {
     const userValue = event.target.value;
     this.setState({
-      userChoice: userValue
+      userChoice: userValue,
     })
-    console.log(userValue)
     this.toggleForm();
     this.toggleEmotion();
+    // generating audio pieces by using map method to DRY the code 
   }
 
   render() {
@@ -77,7 +75,6 @@ class App extends Component {
     // emotion classes
     const emotionVisibility = this.state.showEmotion ? 'srOnly' : ''
     const emotionClass = `${this.state.userChoice} ${emotionVisibility}`
-
     return (
       <>
         <header className="appHeader">
@@ -88,7 +85,7 @@ class App extends Component {
             <section className="selectionMenu">
               <div className="wrapper">
                 <form className={formVisibility} onSubmit={this.handleOptionSubmit} action="" id="userSelectionMenu">
-                  <label className="formLabel" htmlFor="userSelectionMenu">make a choice</label>
+                  <label className="optionLabel" htmlFor="userSelectionMenu">make a choice</label>
                   <div className="buttons">
                     {this.generateButtons()}
                   </div>
@@ -97,8 +94,10 @@ class App extends Component {
             </section>
             <section className={emotionClass}>
               <div className="wrapper">
-                  <form className="emotionForm" onSubmit={this.handleEmotionSubmit} action="" name="userLetterForm" method="">
+                  <form className="emotionForm" onSubmit={this.handleEmotionSubmit} action="" id="userEmotionInput" name="userLetterForm" method="">
+                    <label htmlFor="userEmotionInput" className="emotionInputLabel">current </label>
                     <Emotion name={this.state.userChoice}/>
+                    <MusicPlayer name={this.state.userChoice} />
                   </form>
               </div>
             </section>

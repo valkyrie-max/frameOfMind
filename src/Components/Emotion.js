@@ -2,12 +2,6 @@
 import React, { Component } from 'react'; 
 
 class Emotion extends Component {
-    constructor() {
-        super();
-    }
-    // handleEmotionSubmit(event) {
-    //     event.preventDefault
-    // }
     render() {
         return(
             <>
