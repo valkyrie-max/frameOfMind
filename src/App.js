@@ -7,7 +7,6 @@ import firebase from './firebase';
 // import components
 import LandingPage from './Components/LandingPage';
 import Description from './Components/Description';
-import Emotion from './Components/Emotion';
 import MusicPlayer from './Components/MusicPlayer'
 
 // styling import
@@ -18,6 +17,9 @@ class App extends Component {
     super();
     this.state = {
       userChoice: '',
+      letters: [],
+      userLetter: '',
+      userName: ''
     }
   }
 
@@ -27,7 +29,7 @@ class App extends Component {
     this.setState({
       userChoice: userValue,
     })
-    scroller.scrollTo('emotionForm', {
+    scroller.scrollTo('emotionContainer', {
       duration: 1500,
       delay: 0,
       smooth: 'easeInOutQuart'
@@ -58,12 +60,65 @@ class App extends Component {
     })
   }
 
-  // handle submits
+  // handle option submit
   handleOptionSubmit = (event) => {
     event.preventDefault(); 
   }
-  handleEmotionSubmit = (event) => {
+
+  //handle change in the textarea to store data from the user 
+  handleLetterChange = (event) => {
+    this.setState({
+      userLetter: event.target.value
+    })
+  } 
+
+  // handle change in the text input to store user's name
+  handleNameChange = (event) => {
+    this.setState({
+      userName: event.target.value
+    })
+  }
+
+  // handle onClick to submit the letter
+  handleLetterClick = (event) => {
     event.preventDefault(); 
+    if (this.state.userLetter !== '' && this.state.userChoice !== '') {
+      const dbRef = firebase.database().ref(); 
+      const newInput = {
+        userLetter: this.state.userLetter,
+        userName: this.state.userName
+      }
+      dbRef.push(newInput);
+      this.setState({
+        userLetter: '',
+        userName: ''
+      })
+      scroller.scrollTo('lettersContainer', {
+        duration: 2000,
+        delay: 0,
+        smooth: 'easeInOutQuart'
+    })
+    } else if (this.state.userChoice == '' && this.state.userLetter !== '') {
+      return <p>select an emotion please. if you are unsure, just go with empty.</p>
+      // alert(`select an emotion please. if you are unsure, just go with empty.`)
+    } else {
+      return alert(`i'm sorry but you'll have to type at least a couple of words. i hope it will make you feel better.`)
+    }
+  }
+
+
+  componentDidMount() {
+    const dbRef = firebase.database().ref();
+    dbRef.on(`value`, (response) =>{
+      const newDataSet = [];
+      const data = response.val(); 
+      for (let key in data) {
+        newDataSet.push(data[key]);
+      }
+      this.setState({
+        letters: newDataSet
+      })
+    })
   }
   
 
@@ -93,18 +148,42 @@ class App extends Component {
               </div>
             </section>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeInDown" duration={2} initiallyVisible={false}>
+          <ScrollAnimation animateIn="fadeInLeft" duration={2} initiallyVisible={false}>
             <section className={emotionClass}>
               <div className="wrapper">
                 <label htmlFor="userEmotionInput" className="emotionInputLabel">you chose: {this.state.userChoice}</label>
-                <form className="emotionForm" onSubmit={this.handleEmotionSubmit} action="" id="userEmotionInput" name="userLetterForm" method="">
-                  <Emotion name={this.state.userChoice}/>
+                <form className="emotionForm" action="" id="userEmotionInput" name="userLetterForm" method="">
+                  <div className={this.state.userChoice}>
+                    {/* name input */}
+                    <label htmlFor="userNameInput" className="nameHere">leave your name here.</label>
+                    <input value={this.state.userName} onChange={this.handleNameChange} placeholder="or don't." type="text" name="userName" id="userNameInput"/>
+                    {/* textarea input */}
+                    <label htmlFor="userTextInput" className="characterLimit">maximum length: 1000 characters.</label>
+                    <textarea value={this.state.userLetter} onChange={this.handleLetterChange} id="userTextInput" placeholder="let it out." className="userLetterText" maxLength="1000" cols="30" rows ="10" name="userTextInput"></textarea>
+                    {/* submit letter */}
+                    <button onClick={this.handleLetterClick} className="submitLetter" type="submit">share my letter</button>
+                  </div>
                   <MusicPlayer name={this.state.userChoice} />
                   <button className="backToSelection" type="button" onClick={this.handleGoBack}>take me back up to selection</button>
                 </form>
               </div>
             </section>
           </ScrollAnimation>
+          <section className="lettersContainer">
+            <ul>
+              {
+                this.state.letters.map((letter, value) => {
+                    return (
+                      <li key={value}>
+                        <h2>{letter.userName}</h2>
+                        <p>{letter.userLetter}</p>
+                        <button type="button" className="deleteLetter">remove letter.</button>
+                      </li>
+                      )
+                })
+              }
+            </ul>
+          </section>
         </main>
       </>
     );

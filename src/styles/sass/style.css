@@ -689,6 +689,7 @@ textarea, input[type='text'] {
 }
 
 .submitLetter {
+  width: 100%;
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 500;
@@ -736,5 +737,10 @@ audio {
 .emptyMain {
   background-color: #8C939C;
   color: #F0F0F0;
+}
+
+.lettersContainer {
+  min-height: 100vh;
+  font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
