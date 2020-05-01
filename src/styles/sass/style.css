@@ -671,6 +671,9 @@ textarea, input[type='text'] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  margin-top: 50px;
 }
 
 .emotionInputLabel {
@@ -679,13 +682,9 @@ textarea, input[type='text'] {
 
 .nameHere, .characterLimit {
   font-size: 3rem;
-  padding: 10px 0px;
+  margin: 10px 0px;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-}
-
-.emotionForm {
-  margin-top: 30px;
 }
 
 .submitLetter {
@@ -740,7 +739,78 @@ audio {
 }
 
 .lettersContainer {
+  padding-top: 80px;
   min-height: 100vh;
-  font-size: 2rem;
+}
+
+.lettersText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lettersText h2 {
+  display: inline-block;
+  width: 65%;
+  font-size: 10rem;
+  color: #474350;
+}
+
+.lettersText .creditsReferral {
+  font-size: 3.5rem;
+  padding-top: 30px;
+  text-align: right;
+}
+
+.lettersText .creditsReferral .fatText {
+  text-transform: uppercase;
+  color: #474350;
+}
+
+.lettersContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.lettersContainer ul li {
+  margin: 50px 20px 20px 0px;
+  max-width: 35%;
+  max-height: 250px;
+  overflow: auto;
+  color: #474350;
+  scrollbar-color: red;
+}
+
+.lettersContainer ul li h3 {
+  background-color: #979EB1;
+  font-weight: 400;
+  font-size: 2.6rem;
+  padding: 5px;
+}
+
+.lettersContainer ul li p {
+  background-color: #B9CDDA;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 15px;
+}
+
+.lettersContainer ul li .deleteLetter {
+  color: #474350;
+  font-size: 1.8rem;
+  padding: 5px;
+  width: 100%;
+  text-align: left;
 }
 /*# sourceMappingURL=style.css.map */

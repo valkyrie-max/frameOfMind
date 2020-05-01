@@ -13,8 +13,8 @@ import MusicPlayer from './Components/MusicPlayer'
 import './styles/sass/style.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userChoice: '',
       letters: [],
@@ -55,8 +55,8 @@ class App extends Component {
       `empty`
     ]
 
-    return buttonArray.map((value) => {
-      return <button onClick={this.handleUserClick} type="submit" className={value} value={value}>{value}</button>
+    return buttonArray.map((value, index) => {
+      return <button key={index} onClick={this.handleUserClick} type="submit" className={value} value={value}>{value}</button>
     })
   }
 
@@ -86,7 +86,7 @@ class App extends Component {
       const dbRef = firebase.database().ref(); 
       const newInput = {
         userLetter: this.state.userLetter,
-        userName: this.state.userName
+        userName: this.state.userName === '' ? 'anon' : this.state.userName
       }
       dbRef.push(newInput);
       this.setState({
@@ -99,14 +99,13 @@ class App extends Component {
         smooth: 'easeInOutQuart'
     })
     } else if (this.state.userChoice == '' && this.state.userLetter !== '') {
-      return <p>select an emotion please. if you are unsure, just go with empty.</p>
-      // alert(`select an emotion please. if you are unsure, just go with empty.`)
+      return alert(`select an emotion please. if you are unsure, just go with empty.`)
     } else {
       return alert(`i'm sorry but you'll have to type at least a couple of words. i hope it will make you feel better.`)
     }
   }
 
-
+  // once there is something on the page, grab data from Fb
   componentDidMount() {
     const dbRef = firebase.database().ref();
     dbRef.on(`value`, (response) =>{
@@ -129,12 +128,12 @@ class App extends Component {
       <>
         <header className="appHeader">
           <Animated animationIn="fadeInDown" animationOut="fadeOutDown" animationInDuration={1800} animationOutDuration={1800} isVisible={true}>
-              <LandingPage />
+              <LandingPage key="landingPage" />
           </Animated>
         </header>
         <main>
           <ScrollAnimation animateOnce={true} animateIn="fadeInLeft"  duration={2} initiallyVisible={false}>
-            <Description />
+            <Description key="description"/>
           </ScrollAnimation>
           <ScrollAnimation animateOnce={true} animateIn="fadeInRight"  duration={2} initiallyVisible={false}>
             <section  className="selectionMenu">
@@ -153,38 +152,63 @@ class App extends Component {
               <div className="wrapper">
                 <label htmlFor="userEmotionInput" className="emotionInputLabel">you chose: {this.state.userChoice}</label>
                 <form className="emotionForm" action="" id="userEmotionInput" name="userLetterForm" method="">
-                  <div className={this.state.userChoice}>
-                    {/* name input */}
-                    <label htmlFor="userNameInput" className="nameHere">leave your name here.</label>
-                    <input value={this.state.userName} onChange={this.handleNameChange} placeholder="or don't." type="text" name="userName" id="userNameInput"/>
-                    {/* textarea input */}
-                    <label htmlFor="userTextInput" className="characterLimit">maximum length: 1000 characters.</label>
-                    <textarea value={this.state.userLetter} onChange={this.handleLetterChange} id="userTextInput" placeholder="let it out." className="userLetterText" maxLength="1000" cols="30" rows ="10" name="userTextInput"></textarea>
-                    {/* submit letter */}
-                    <button onClick={this.handleLetterClick} className="submitLetter" type="submit">share my letter</button>
-                  </div>
-                  <MusicPlayer name={this.state.userChoice} />
+                  {/* name input */}
+                  <label htmlFor="userNameInput" className="nameHere">leave your name here.</label>
+                  <input className="userNameBox" value={this.state.userName} onChange={this.handleNameChange} placeholder="or don't." type="text" name="userName" id="userNameInput"/>
+                  {/* textarea input */}
+                  <label htmlFor="userTextInput" className="characterLimit">maximum length: 500 characters.</label>
+                  <textarea value={this.state.userLetter} onChange={this.handleLetterChange} id="userTextInput" placeholder="let it out." className="userLetterText" maxLength="500" cols="30" rows ="5" name="userTextInput"></textarea>
+                  {/* submit letter */}
+                  <button onClick={this.handleLetterClick} className="submitLetter" type="submit">share my letter</button>
+                  <MusicPlayer key="musicPlayer" name={this.state.userChoice} />
                   <button className="backToSelection" type="button" onClick={this.handleGoBack}>take me back up to selection</button>
                 </form>
               </div>
             </section>
           </ScrollAnimation>
-          <section className="lettersContainer">
-            <ul>
-              {
-                this.state.letters.map((letter, value) => {
-                    return (
-                      <li key={value}>
-                        <h2>{letter.userName}</h2>
+          <ScrollAnimation animateIn="fadeInUp" duration={2} initiallyVisible={false}>
+            <section className="lettersContainer">
+            <div className="wrapper">
+              <div className="lettersText">
+                <h2>see what others left behind.</h2>
+                <div className="creditsReferral">
+                  <p>"who's music is that?"</p>
+                  <p>"what fonts did you use?"</p>
+                  <p>you can find credits and info</p>
+                  <a href="#credits"><span className="fatText">here</span></a>
+                </div>
+              </div>
+
+              <ul>
+                {
+                  this.state.letters.map((letter, index) => {
+                      return (
+                        <li key={index}>
+                        <h3>{letter.userName}</h3>
                         <p>{letter.userLetter}</p>
-                        <button type="button" className="deleteLetter">remove letter.</button>
-                      </li>
+                        </li>
                       )
-                })
-              }
-            </ul>
+                  })
+                }
+              </ul>
+            </div>
           </section>
+          </ScrollAnimation>
         </main>
+        <footer>
+          <div className="credits">
+            <h2>credits</h2>
+            <div className="creditsLinks">
+              <ul>
+                <li>checkout the project repo on <a href="https://github.com/valkyrie-max/frameOfMind">github</a></li>
+                <li>music by <a href="https://freemusicarchive.org/music/Unheard_Music_Concepts">Unheard Music Concepts</a></li>
+                <li>fonts used: <a className="raleway" href="https://fonts.google.com/specimen/Raleway">Raleway</a>, <a className="merriweather" href="https://fonts.google.com/specimen/Merriweather">Merriweather</a></li>
+                <li>primary color palette can be found <a href="https://coolors.co/474350-b9cdda-ebeaea-979eb1">here</a></li>
+                <li>the stranger who made this can also be found on <a href="https://twitter.com/alisacodes">twitter</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
       </>
     );
   }

@@ -6,6 +6,8 @@
 .emotionForm {
     display: flex;
     flex-direction: column;
+    align-content: space-between;
+    margin-top: 50px;
 }
 
 .emotionInputLabel {
@@ -14,13 +16,9 @@
 
 .nameHere, .characterLimit {
     font-size: 3rem;
-    padding: 10px 0px;
+    margin: 10px 0px;
     font-family: $primaryFont;
     font-weight: 500;
-}
-
-.emotionForm {
-    margin-top: 30px;
 }
 
 .submitLetter {
