@@ -11,11 +11,11 @@ import tranquil from '../assets/audio/tranquil.mp3'
 const MusicPlayer = (props) => {
     const getAudioTrack = () => {
         switch (props.name) {
-            case `anger`: return <audio controls src={anger}></audio>;
-            case `joy`: return <audio controls src={joy}></audio>;
-            case `sadness`: return <audio controls src={sadness}></audio>;
-            case `tranquil`: return <audio controls src={tranquil}></audio>;
-            case `empty`: return <audio controls src={empty}></audio>;
+            case `anger`: return <audio controls src={anger}>Sorry, your browser doesn't support music player.</audio>;
+            case `joy`: return <audio controls src={joy}>Sorry, your browser doesn't support music player.</audio>;
+            case `sadness`: return <audio controls src={sadness}>Sorry, your browser doesn't support music player.</audio>;
+            case `tranquil`: return <audio controls src={tranquil}>Sorry, your browser doesn't support music player.</audio>;
+            case `empty`: return <audio controls src={empty}>Sorry, your browser doesn't support music player.</audio>;
         }
     }
 

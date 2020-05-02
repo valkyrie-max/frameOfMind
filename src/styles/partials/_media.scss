@@ -41,7 +41,15 @@
         .empty:hover {
             @include optionBiggerHover;
         }
+        .anger::after,
+        .joy::after,
+        .sadness::after,
+        .tranquil::after,
+        .empty::after {
+            @include japaneseDifferentPosition
+        }
     }
+
 }
 
 @media (max-width: 1000px) {
@@ -78,16 +86,8 @@
         flex-direction: column;
         flex: 1;
         button {
+            padding: 60px;
             flex: 1 0 20%;
-        }
-    }
-    .menuFormContainer {
-        .anger::after,
-        .joy::after,
-        .sadness::after,
-        .tranquil::after,
-        .empty::after {
-            @include japaneseDifferentPosition
         }
     }
 

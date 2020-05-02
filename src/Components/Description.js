@@ -28,10 +28,10 @@ class Description extends Component {
                     <div className="mainText">
                         <h4 className="fatText">frame of MIND is a place where you can get everything off your chest.</h4>
                         <div className="fullDescription">
-                            <p><span className="fatText">choose</span>  an emotion from the list that fits your current mood.</p>
-                            <p>then you can <span className="fatText">listen</span> to the offered melody <span className="crossedOut">(or not)</span> while <span className="fatText">writing</span> about you are feeling in this very moment.</p>
+                            <p><span className="fatText">choose</span> an emotion from the list that fits your current mood.</p>
+                            <p>then you can <span className="fatText">listen</span> to the offered melody <span className="crossedOut">(or not)</span> while <span className="fatText">writing</span> about what you are feeling in this very moment.</p>
                             <p>you can <span className="fatText">share</span> your thoughts with others after you are done by posting them to the letters section. <span className="crossedOut">or you can erase them.</span></p>
-                            <p><span className="fatText">signing</span> your name with your name or a nickname is also an option. <span className="crossedOut">but you don't have to.</span></p>
+                            <p><span className="fatText">signing</span> your letter with your name or a nickname is also an option. <span className="crossedOut">but you don't have to.</span></p>
                         </div>
                     </div>
                 </div>
