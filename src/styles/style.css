@@ -355,6 +355,7 @@ textarea, input[type='text'] {
 
 .landingPageHeading {
   font-size: 7.5rem;
+  font-family: "Raleway", sans-serif;
   margin-top: 14vh;
   color: #979EB1;
 }
@@ -372,6 +373,7 @@ textarea, input[type='text'] {
   max-width: 30%;
   font-size: 4rem;
   color: #979EB1;
+  font-family: "Merriweather", serif;
 }
 
 .landingPageNavButtons ul {
@@ -406,7 +408,7 @@ textarea, input[type='text'] {
   display: inline-block;
   opacity: 0;
   width: 100%;
-  content: "let's do it!";
+  content: "やろう!";
   font-size: 2.5rem;
   position: absolute;
   left: 50%;
@@ -418,7 +420,7 @@ textarea, input[type='text'] {
 }
 
 .landingPageNavButtons ul li .landingPageGo:hover::after {
-  content: "let's do it!";
+  content: "やろう!";
   opacity: 1;
 }
 
@@ -837,5 +839,271 @@ footer .credits li {
 footer .credits li a {
   font-weight: 500;
   color: #EBEAEA;
+}
+
+@media (max-width: 1550px) {
+  .topText {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .socialLinks {
+    margin-top: 15px;
+  }
+  .mainText {
+    font-size: 3rem;
+  }
+  .creditsReferral p {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .buttons button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 350px;
+            flex: 1 0 350px;
+  }
+  .menuFormContainer .anger:hover {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
+  .menuFormContainer .joy:hover {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
+  .menuFormContainer .sadness:hover {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
+  .menuFormContainer .tranquil:hover {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
+  .menuFormContainer .empty:hover {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .landingPageHeading {
+    font-size: 5rem;
+  }
+  .landingPageDescription {
+    min-width: 80%;
+  }
+  .logoContainer {
+    min-width: 85%;
+  }
+  .descriptionText {
+    margin-top: 20px;
+  }
+  .descriptionText p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 805px) {
+  .landingPageDescription {
+    font-size: 3.5rem;
+  }
+  .landingPageAestheticElement::after {
+    bottom: -230%;
+    font-size: 2.6rem;
+  }
+  .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .buttons button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 20%;
+            flex: 1 0 20%;
+  }
+  .menuFormContainer .anger::after,
+  .menuFormContainer .joy::after,
+  .menuFormContainer .sadness::after,
+  .menuFormContainer .tranquil::after,
+  .menuFormContainer .empty::after {
+    bottom: 0%;
+    font-size: 2.5rem;
+  }
+  .backToSelection {
+    width: 50%;
+  }
+  .emotionInputLabel {
+    font-size: 8rem;
+  }
+  .lettersText h2 {
+    font-size: 8rem;
+  }
+  .lettersText .creditsReferral p {
+    font-size: 2.7rem;
+  }
+  footer {
+    padding: 40px 0px;
+  }
+  .creditsLinks li:nth-child(5) {
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 615px) {
+  .landingPageContainer {
+    padding: 150px 0px;
+  }
+  .landingPageDescription {
+    font-size: 2.3rem;
+  }
+  .landingPageHeading {
+    font-size: 3rem;
+  }
+  .logoContainer {
+    min-width: 90%;
+    margin: 50px 0px;
+  }
+  .sectionName h2 {
+    font-size: 8rem;
+  }
+  .descriptionText p {
+    font-size: 2.8rem;
+  }
+  .mainText {
+    font-size: 2.5rem;
+  }
+  .buttons button {
+    font-size: 3.5rem;
+  }
+  .lettersText {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 35px;
+  }
+  .lettersText h2 {
+    width: 100%;
+  }
+  .lettersContainer {
+    padding: 80px 0px;
+  }
+  .lettersContainer ul li {
+    margin: 20px 0px;
+    min-width: 100%;
+    max-height: 100%;
+    overflow: unset;
+  }
+  footer .credits li {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 485px) {
+  .landingPageNavButtons ul {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .landingPageNavButtons ul li {
+    font-size: 2rem;
+  }
+  .landingPageNavButtons ul li button {
+    font-weight: 500;
+  }
+  .landingPageNavButtons ul li .landingPageGo::after {
+    font-size: 2rem;
+  }
+  .landingPageNavButtons ul li .landingPageGo:hover::after {
+    bottom: 130%;
+  }
+  .mainText {
+    font-size: 2rem;
+    margin-top: 8vh;
+  }
+  .socialLinks {
+    margin-top: 30px;
+  }
+  .emotionInputLabel {
+    font-size: 7rem;
+  }
+  .lettersContainer {
+    padding: 80px 0px;
+  }
+  .lettersText h2 {
+    font-size: 6rem;
+  }
+  .lettersText h2 .creditsReferral P {
+    font-size: 2.3rem;
+  }
+  .lettersText h2 .creditsReferral a .fatText {
+    font-size: 2.5rem;
+  }
+  .lettersContainer ul {
+    padding-top: 50px;
+  }
+  .lettersContainer ul li {
+    margin: 10px 10px 10px 0px;
+  }
+  .lettersContainer ul li h3 {
+    font-size: 2rem;
+  }
+  .lettersContainer ul li p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .logoContainer {
+    padding: 0;
+  }
+  .landingPageNavButtons ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .landingPageNavButtons ul li {
+    margin: 10px 0px;
+  }
+  .landingPageNavButtons ul li button {
+    width: 100%;
+    text-transform: uppercase;
+  }
+  .sectionName h2, .optionLabel, .emotionInputLabel, footer .credits h2 {
+    font-size: 6rem;
+  }
+  .nameHere, .characterLimit {
+    font-size: 2.5rem;
+  }
+  .submitLetter {
+    font-size: 2.3rem;
+  }
+  .backToSelection {
+    width: 80%;
+  }
+  footer {
+    padding: 80px 0px 20px 0px;
+  }
+  footer .credits li {
+    margin: 60px 0px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

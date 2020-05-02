@@ -1,0 +1,274 @@
+@media (max-width: 1550px) {
+    .topText {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .socialLinks {
+        margin-top: 15px;
+    }
+
+    .mainText {
+        font-size: 3rem;
+    }
+
+    .creditsReferral p {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1180px) {
+    .buttons button {
+        flex: 1 0 350px;
+    }
+    .menuFormContainer {
+        .anger:hover {
+            @include optionBiggerHover;
+        }
+        
+        .joy:hover {
+            @include optionBiggerHover;
+        }
+        
+        .sadness:hover {
+            @include optionBiggerHover;
+        }
+        
+        .tranquil:hover {
+            @include optionBiggerHover;
+        }
+        
+        .empty:hover {
+            @include optionBiggerHover;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .landingPageHeading {
+        font-size: 5rem;
+    }
+
+    .landingPageDescription {
+        min-width: 80%;
+    }
+
+    .logoContainer {
+        min-width: 85%;
+    }
+
+    .descriptionText {
+        margin-top: 20px;
+        p {
+            text-align: left;
+        }
+    }
+}
+
+@media (max-width: 805px) {
+    .landingPageDescription {
+        font-size: 3.5rem;
+    }
+    .landingPageAestheticElement::after {
+        bottom: -230%;
+        font-size: 2.6rem;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        button {
+            flex: 1 0 20%;
+        }
+    }
+    .menuFormContainer {
+        .anger::after,
+        .joy::after,
+        .sadness::after,
+        .tranquil::after,
+        .empty::after {
+            @include japaneseDifferentPosition
+        }
+    }
+
+    .backToSelection {
+        width: 50%;
+    }
+
+    .emotionInputLabel {
+        font-size: 8rem;
+    }
+    .lettersText{
+        h2 {
+            font-size: 8rem;
+        }
+        .creditsReferral p {
+            font-size: 2.7rem;
+        }
+    } 
+
+    footer {
+        padding: 40px 0px;
+    }
+    .creditsLinks {
+        li:nth-child(5) {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media (max-width: 615px) {
+    .landingPageContainer {
+        padding: 150px 0px;
+    }
+    .landingPageDescription {
+        font-size: 2.3rem;
+    }
+
+    .landingPageHeading {
+        font-size: 3rem;
+    }
+    
+    .logoContainer {
+        min-width: 90%;
+        margin: 50px 0px;
+    }
+
+    .sectionName h2 {
+        font-size: 8rem;
+    }
+    
+    .descriptionText p {
+        font-size: 2.8rem;
+    }
+
+    .mainText {
+        font-size: 2.5rem;
+    }
+
+    .buttons button {
+        font-size: 3.5rem;
+    }
+
+    .lettersText {
+        flex-direction: column;
+        padding-bottom: 35px;
+        h2 {
+            width: 100%;
+        }
+    }
+
+    .lettersContainer {
+        padding: 80px 0px;
+        ul li {
+            margin: 20px 0px;
+            min-width: 100%;
+            max-height: 100%;
+            overflow: unset;
+        }
+    }
+
+    footer .credits li {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 485px) {
+    .landingPageNavButtons ul {
+        justify-content: space-between;
+        li  {
+            font-size: 2rem;
+            button {
+                font-weight: 500;
+            }
+            .landingPageGo::after {
+                font-size: 2rem;
+            }
+            .landingPageGo:hover::after {
+                bottom: 130%;
+            }
+        }
+    }
+
+    .mainText {
+        font-size: 2rem;
+        margin-top: 8vh;
+    }
+
+    .socialLinks {
+        margin-top: 30px;
+    }
+
+    .emotionInputLabel {
+        font-size: 7rem;
+    }
+
+    .lettersContainer {
+        padding: 80px 0px;
+    }
+
+    .lettersText h2 {
+        font-size: 6rem;
+        .creditsReferral {
+            P {
+                font-size: 2.3rem;
+            }
+            a .fatText {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .lettersContainer {
+        ul {
+            padding-top: 50px;
+            li {
+                margin: 10px 10px 10px 0px;
+                h3 {
+                    font-size: 2rem;
+                }
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .logoContainer {
+        padding: 0;
+    }
+    .landingPageNavButtons ul {
+        flex-direction: column;
+        li {
+            margin: 10px 0px;
+            button {
+                width: 100%;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .sectionName h2, .optionLabel, .emotionInputLabel, footer .credits h2 {
+        font-size: 6rem;
+    }
+
+    .nameHere, .characterLimit {
+        font-size: 2.5rem;
+    }
+
+    .submitLetter {
+        font-size: 2.3rem;
+    }
+
+    .backToSelection {
+        width: 80%;
+    }
+
+    footer {
+        padding: 80px 0px 20px 0px;
+        .credits li {
+            margin: 60px 0px;
+        }
+    }
+}

@@ -6,6 +6,15 @@
     position: absolute;
 }
 
+@mixin japaneseDifferentPosition {
+    bottom: 0%;
+    font-size: 2.5rem;
+}
+
 @mixin optionHover {
     flex: 1 0 10%;
+}
+
+@mixin optionBiggerHover {
+    flex: 1 0 45%;
 }

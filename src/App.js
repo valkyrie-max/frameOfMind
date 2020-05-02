@@ -112,7 +112,7 @@ class App extends Component {
       duration: 2000,
       delay: 0,
       smooth: 'easeInOutQuart'
-  })
+    })
   }
 
   // once there is something on the page, grab data from Fb
