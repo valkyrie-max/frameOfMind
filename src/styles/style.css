@@ -783,7 +783,7 @@ audio {
 }
 
 .lettersContainer ul li {
-  margin: 50px 20px 20px 0px;
+  margin: 35px 35px 35px 0px;
   max-width: 35%;
   max-height: 250px;
   overflow: auto;
@@ -812,5 +812,30 @@ audio {
   padding: 5px;
   width: 100%;
   text-align: left;
+}
+
+footer {
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: #979EB1;
+}
+
+footer .credits h2 {
+  text-align: right;
+  color: #474350;
+  font-size: 10rem;
+}
+
+footer .credits li {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 4rem;
+  margin: 80px 0px;
+  color: #EBEAEA;
+}
+
+footer .credits li a {
+  font-weight: 500;
+  color: #EBEAEA;
 }
 /*# sourceMappingURL=style.css.map */

@@ -8,9 +8,10 @@ import firebase from './firebase';
 import LandingPage from './Components/LandingPage';
 import Description from './Components/Description';
 import MusicPlayer from './Components/MusicPlayer'
+import LetterTopPart from './Components/LetterTopPart';
 
 // styling import
-import './styles/sass/style.css';
+import './styles/style.css';
 
 class App extends Component {
   constructor(props) {
@@ -105,6 +106,15 @@ class App extends Component {
     }
   }
 
+  // handle on click to refer to credits 
+  handleCreditsClick = (event) => {
+    scroller.scrollTo('footer', {
+      duration: 2000,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+  })
+  }
+
   // once there is something on the page, grab data from Fb
   componentDidMount() {
     const dbRef = firebase.database().ref();
@@ -169,16 +179,7 @@ class App extends Component {
           <ScrollAnimation animateIn="fadeInUp" duration={2} initiallyVisible={false}>
             <section className="lettersContainer">
             <div className="wrapper">
-              <div className="lettersText">
-                <h2>see what others left behind.</h2>
-                <div className="creditsReferral">
-                  <p>"who's music is that?"</p>
-                  <p>"what fonts did you use?"</p>
-                  <p>you can find credits and info</p>
-                  <a href="#credits"><span className="fatText">here</span></a>
-                </div>
-              </div>
-
+              <LetterTopPart />
               <ul>
                 {
                   this.state.letters.map((letter, index) => {
@@ -196,17 +197,21 @@ class App extends Component {
           </ScrollAnimation>
         </main>
         <footer>
-          <div className="credits">
-            <h2>credits</h2>
-            <div className="creditsLinks">
-              <ul>
-                <li>checkout the project repo on <a href="https://github.com/valkyrie-max/frameOfMind">github</a></li>
-                <li>music by <a href="https://freemusicarchive.org/music/Unheard_Music_Concepts">Unheard Music Concepts</a></li>
-                <li>fonts used: <a className="raleway" href="https://fonts.google.com/specimen/Raleway">Raleway</a>, <a className="merriweather" href="https://fonts.google.com/specimen/Merriweather">Merriweather</a></li>
-                <li>primary color palette can be found <a href="https://coolors.co/474350-b9cdda-ebeaea-979eb1">here</a></li>
-                <li>the stranger who made this can also be found on <a href="https://twitter.com/alisacodes">twitter</a></li>
-              </ul>
+          <div className="wrapper">
+          <ScrollAnimation animateIn="fadeInDown" duration={2} initiallyVisible={false}>
+            <div className="credits">
+              <h2>credits</h2>
+              <div className="creditsLinks">
+                <ul>
+                  <li>checkout the project repo on <a href="https://github.com/valkyrie-max/frameOfMind">github</a></li>
+                  <li>music by <a href="https://freemusicarchive.org/music/Unheard_Music_Concepts">Unheard Music Concepts</a></li>
+                  <li>fonts used: <a className="raleway" href="https://fonts.google.com/specimen/Raleway">Raleway</a>, <a className="merriweather" href="https://fonts.google.com/specimen/Merriweather">Merriweather</a></li>
+                  <li>primary color palette can be found <a href="https://coolors.co/474350-b9cdda-ebeaea-979eb1">here</a></li>
+                  <li>the stranger who made this can also be found on <a href="https://twitter.com/alisacodes">twitter</a></li>
+                </ul>
+              </div>
             </div>
+          </ScrollAnimation>
           </div>
         </footer>
       </>
