@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6bb7b9851dd34ea449f8c7d668a21e1b",
+    "revision": "3c7686df5e3d3300801a0dcf9b822d02",
     "url": "/frameOfMind/index.html"
   },
   {
-    "revision": "71685a38cbf79bfff8e9",
-    "url": "/frameOfMind/static/css/main.86f1a031.chunk.css"
+    "revision": "6fffaafb0cc8057b4d42",
+    "url": "/frameOfMind/static/css/main.ee8bc35b.chunk.css"
   },
   {
     "revision": "f1d3542d900f33d343e0",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/frameOfMind/static/js/2.d7902839.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "71685a38cbf79bfff8e9",
-    "url": "/frameOfMind/static/js/main.d1bc2e00.chunk.js"
+    "revision": "6fffaafb0cc8057b4d42",
+    "url": "/frameOfMind/static/js/main.9c62dc89.chunk.js"
   },
   {
     "revision": "35933cb309fe484e38ae",
