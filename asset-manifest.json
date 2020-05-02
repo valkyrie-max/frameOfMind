@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/frameOfMind/static/css/main.ff4c8873.chunk.css",
+    "main.js": "/frameOfMind/static/js/main.447d09ea.chunk.js",
+    "main.js.map": "/frameOfMind/static/js/main.447d09ea.chunk.js.map",
+    "runtime-main.js": "/frameOfMind/static/js/runtime-main.2732bde7.js",
+    "runtime-main.js.map": "/frameOfMind/static/js/runtime-main.2732bde7.js.map",
+    "static/js/2.d7902839.chunk.js": "/frameOfMind/static/js/2.d7902839.chunk.js",
+    "static/js/2.d7902839.chunk.js.map": "/frameOfMind/static/js/2.d7902839.chunk.js.map",
+    "index.html": "/frameOfMind/index.html",
+    "precache-manifest.6388c73666d0b4426b2eb82d8cd21b99.js": "/frameOfMind/precache-manifest.6388c73666d0b4426b2eb82d8cd21b99.js",
+    "service-worker.js": "/frameOfMind/service-worker.js",
+    "static/css/main.ff4c8873.chunk.css.map": "/frameOfMind/static/css/main.ff4c8873.chunk.css.map",
+    "static/js/2.d7902839.chunk.js.LICENSE.txt": "/frameOfMind/static/js/2.d7902839.chunk.js.LICENSE.txt",
+    "static/media/anger.mp3": "/frameOfMind/static/media/anger.f26a93e1.mp3",
+    "static/media/empty.mp3": "/frameOfMind/static/media/empty.51cbc765.mp3",
+    "static/media/joy.mp3": "/frameOfMind/static/media/joy.efc9091e.mp3",
+    "static/media/projectLogo.png": "/frameOfMind/static/media/projectLogo.81c40b7d.png",
+    "static/media/sadness.mp3": "/frameOfMind/static/media/sadness.a8e8e5f6.mp3",
+    "static/media/tranquil.mp3": "/frameOfMind/static/media/tranquil.a6d6edc4.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2732bde7.js",
+    "static/js/2.d7902839.chunk.js",
+    "static/css/main.ff4c8873.chunk.css",
+    "static/js/main.447d09ea.chunk.js"
+  ]
+}
