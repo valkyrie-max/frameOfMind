@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
 import ScrollAnimation from 'react-animate-on-scroll';
-import { animateScroll as scroll, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import firebase from './firebase';
 
 // import components
@@ -99,7 +99,7 @@ class App extends Component {
         delay: 0,
         smooth: 'easeInOutQuart'
     })
-    } else if (this.state.userChoice == '' && this.state.userLetter !== '') {
+    } else if (this.state.userChoice === '' && this.state.userLetter !== '') {
       return alert(`select an emotion please. if you are unsure, just go with empty.`)
     } else {
       return alert(`i'm sorry but you'll have to type at least a couple of words. i hope it will make you feel better.`)

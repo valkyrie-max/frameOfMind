@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { animateScroll as scroll, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 
 class LandingPage extends Component {
     handleAbout = (event) => {

@@ -23,6 +23,15 @@
     }
 }
 
+.restart {
+    margin: 15px 0px;
+    font-size: 3rem;
+    font-weight: 500;
+    color: $backgroundColor;
+    background-color: $darkHighlightColor;
+    padding: 5px 20px;
+}
+
 .lettersContainer ul {
     display: flex;
     flex-direction: row;
@@ -46,13 +55,6 @@
             font-weight: 500;
             line-height: 1.5;
             padding: 15px;
-        }
-        .deleteLetter {
-            color: $primaryTextColor;
-            font-size: 1.8rem;
-            padding: 5px;
-            width: 100%;
-            text-align: left;
         }
     }
 }

@@ -690,6 +690,8 @@ textarea, input[type='text'] {
 }
 
 .submitLetter {
+  background-color: #B9CDDA;
+  color: #474350;
   width: 100%;
   font-size: 3rem;
   text-transform: uppercase;
@@ -698,12 +700,9 @@ textarea, input[type='text'] {
   margin-top: 25px;
 }
 
-audio {
-  width: 100%;
-  margin: 30px 0px;
-}
-
 .backToSelection {
+  background-color: #979EB1;
+  color: #EBEAEA;
   width: 30%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -713,6 +712,11 @@ audio {
   margin-top: 15px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+audio {
+  width: 100%;
+  margin: 30px 0px;
 }
 
 .angerMain {
@@ -772,6 +776,15 @@ audio {
   color: #474350;
 }
 
+.restart {
+  margin: 15px 0px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #EBEAEA;
+  background-color: #979EB1;
+  padding: 5px 20px;
+}
+
 .lettersContainer ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -806,14 +819,6 @@ audio {
   font-weight: 500;
   line-height: 1.5;
   padding: 15px;
-}
-
-.lettersContainer ul li .deleteLetter {
-  color: #474350;
-  font-size: 1.8rem;
-  padding: 5px;
-  width: 100%;
-  text-align: left;
 }
 
 footer {
@@ -1003,6 +1008,13 @@ footer .credits li a {
   .lettersText h2 {
     width: 100%;
   }
+  .restart {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    padding: 10px 15px;
+    width: 100%;
+  }
   .lettersContainer {
     padding: 80px 0px;
   }
@@ -1018,6 +1030,9 @@ footer .credits li a {
 }
 
 @media (max-width: 485px) {
+  .landingPageContainer {
+    padding-top: 30px;
+  }
   .landingPageNavButtons ul {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -1087,6 +1102,12 @@ footer .credits li a {
   .landingPageNavButtons ul li button {
     width: 100%;
     text-transform: uppercase;
+  }
+  .landingPageNavButtons ul li .landingPageGo:hover::after {
+    opacity: 0;
+  }
+  .buttons button {
+    font-size: 2.8rem;
   }
   .sectionName h2, .optionLabel, .emotionInputLabel, footer .credits h2 {
     font-size: 6rem;
